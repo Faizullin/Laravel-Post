@@ -1,0 +1,26 @@
+<?php
+
+namespace App\Http\Controllers\Post;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use App\Models\Category;
+use App\Models\Tag;
+use App\Models\Post;
+class EditController extends Controller
+{
+    /**
+     * Handle the incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function __invoke(Request $request,Post $post)
+    {
+        return view('post.edit')->with([
+            'post'=>$post,
+            'tags'=>Tag::all(),
+            'categories'=>Category::all()
+        ]);
+    }
+}

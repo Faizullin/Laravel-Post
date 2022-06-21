@@ -1,0 +1,10 @@
+.liveSearch-block{
+  display: relative;
+}
+
+#liveSearch-result-block{
+  display: absolute;
+  left:0;
+  bottom:0;
+  z-index: 10000 !important;
+}
